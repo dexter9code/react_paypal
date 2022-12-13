@@ -1,0 +1,42 @@
+@mixin fullBlue {
+  background-color: #0070ba;
+  border: 1px solid #f7f7f7;
+  h3 {
+    color: #f7f7f7;
+  }
+}
+
+@mixin fullWhite {
+  background-color: #f7f7f7;
+  border: 1px solid #78c7e9;
+  h3 {
+    color: #78c7e9;
+  }
+}
+
+.btn {
+  width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  padding: 10px 3px;
+  cursor: pointer;
+
+  h3 {
+    color: black;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+  }
+}
+.signup {
+  @include fullBlue();
+  &:hover {
+    @include fullWhite();
+  }
+}
+.login {
+  @include fullWhite();
+  &:hover {
+    @include fullBlue();
+  }
+}

@@ -1,0 +1,49 @@
+@mixin screenFlex($content) {
+  display: flex;
+  justify-content: $content;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 5rem;
+  padding: 12px;
+  background-color: #fff;
+  color: black;
+}
+
+.logo {
+  // background-color: lightcoral;
+  @include screenFlex(center);
+  padding: 5px;
+  width: 150px;
+  img {
+    width: 150px;
+    height: 35px;
+  }
+}
+
+.menu {
+  @include screenFlex(space-evenly);
+  // background-color: dodgerblue;
+  width: 450px;
+
+  .menu__contents {
+    @include screenFlex(space-evenly);
+    // background-color: pink;
+    width: 200px;
+    height: 80px;
+
+    h3 {
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.btn__container {
+  @include screenFlex(space-between);
+  width: 220px;
+}

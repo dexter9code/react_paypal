@@ -1,0 +1,35 @@
+@mixin screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__menu {
+  width: 100%;
+  background-color: rgb(75, 156, 238);
+  padding: 1rem;
+  position: absolute;
+  @include screen();
+  flex-wrap: wrap;
+}
+
+.nav__menu_actions {
+  margin: 5px;
+  width: 600px;
+  @include screen();
+  flex-direction: column;
+  padding: 10px 0px;
+  h3 {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    &:hover {
+      border-bottom: 1px solid dodgerblue;
+    }
+  }
+  p {
+    cursor: pointer;
+    font-size: 12px;
+  }
+}
