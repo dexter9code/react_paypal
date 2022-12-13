@@ -5,6 +5,7 @@ import { activeShown, closeShown } from "../../features/NavbarSlice";
 type ChooseNavbar = "shown" | "business" | "partner" | "info";
 
 type AboutInfo = {
+  id: number;
   title: string;
   description: string;
 };
@@ -44,7 +45,7 @@ const NavMenu = ({ menuTitles, type }: NavMenusProps) => {
       onMouseLeave={() => mouseCloseHandler(type)}
     >
       {menuTitles.map((item) => (
-        <div className={styles.nav__menu_actions}>
+        <div className={styles.nav__menu_actions} key={item.id}>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
         </div>
