@@ -15,7 +15,6 @@
 }
 
 .logo {
-  // background-color: lightcoral;
   @include screenFlex(center);
   padding: 5px;
   width: 150px;
@@ -27,12 +26,10 @@
 
 .menu {
   @include screenFlex(space-evenly);
-  // background-color: dodgerblue;
   width: 450px;
 
   .menu__contents {
     @include screenFlex(space-evenly);
-    // background-color: pink;
     width: 200px;
     height: 80px;
 
@@ -45,5 +42,5 @@
 
 .btn__container {
   @include screenFlex(space-between);
-  width: 220px;
+  width: 320px;
 }

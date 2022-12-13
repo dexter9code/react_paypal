@@ -1,0 +1,60 @@
+@use "../common/colors";
+
+@mixin screenflex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoSection {
+  background-color: colors.$primaryColor;
+  height: 1400px;
+
+  .info {
+    padding-top: 2rem;
+    @include screenflex();
+    flex-direction: column;
+    h1 {
+      text-transform: capitalize;
+      font-size: 4rem;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 600;
+      padding-top: 5px;
+    }
+  }
+
+  .gif {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 400px;
+      height: 350px;
+    }
+  }
+}
+
+.video {
+  background-color: transparent;
+  video {
+    width: 100%;
+  }
+}
+
+.video__footer {
+  background-color: colors.$primaryDark;
+  height: 180px;
+  @include screenflex();
+  flex-direction: column;
+  margin-top: -4px;
+  h1 {
+    font-weight: 500;
+    font-size: 2rem;
+    margin-bottom: 18px;
+  }
+}
