@@ -131,6 +131,38 @@ main {
       margin-right: 11rem;
     }
   }
+  .shopping_pay_section {
+    @include screenflex(center);
+    @include shoppingBody();
+    transform: translateX(-70vw);
+    overflow: hidden;
+
+    .shopping_pay_info {
+      margin-right: 12rem;
+      @include shoppingActions();
+    }
+
+    img {
+      width: 400px;
+      height: 400px;
+    }
+  }
+  .shopping_online_section {
+    @include screenflex(center);
+    @include shoppingBody();
+    transform: translateX(70vw);
+    overflow: hidden;
+
+    .shopping_online_info {
+      @include shoppingActions();
+    }
+
+    img {
+      width: 400px;
+      height: 400px;
+      margin-right: 11rem;
+    }
+  }
 }
 
 main {
