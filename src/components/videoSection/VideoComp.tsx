@@ -6,7 +6,9 @@ import ShoppingBtn from "../other/ShoppingBtn";
 
 const VideoComp = () => {
   const shoppingInfoRef = useRef<HTMLDivElement>(null);
+  const packageInfoRef = useRef<HTMLDivElement>(null);
   const [shoppingShow, setShoppingShow] = useState<boolean>();
+  const [packageShow, setPackageShow] = useState<boolean>();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -19,9 +21,18 @@ const VideoComp = () => {
       { threshold: 1 }
     );
     observer.observe(shoppingInfoRef.current!);
-  }, []);
 
-  console.log(shoppingShow);
+    const observer2 = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        setPackageShow(entry.isIntersecting);
+
+        if (entry.isIntersecting) observer2.unobserve(packageInfoRef.current!);
+      },
+      { threshold: 1 }
+    );
+    observer2.observe(packageInfoRef.current!);
+  }, []);
 
   return (
     <>
@@ -64,6 +75,24 @@ const VideoComp = () => {
             <ShoppingBtn title="Shop now" />
           </div>
           <img src="/shopping.png" alt="shopping-img" />
+        </div>
+
+        <div className="white_space" ref={packageInfoRef} />
+
+        <div
+          className={`shopping_package_section ${
+            packageShow && `shopping_section_show`
+          }`}
+        >
+          <img src="/shopping_dress.gif" alt="shopping-img" />
+          <div className={`shopping_package_info`}>
+            <h1>Returning a purchase? Get shipping refunded.</h1>
+            <p>
+              When you return a purchase you bought with PayPal, you can get
+              your return shipping costs*** refunded.
+            </p>
+            <ShoppingBtn title="Shop now" />
+          </div>
         </div>
       </main>
     </>
