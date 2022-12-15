@@ -118,7 +118,7 @@ const VideoComp = () => {
               When you return a purchase you bought with PayPal, you can get
               your return shipping costs*** refunded.
             </p>
-            <ShoppingBtn title="Shop now" />
+            <ShoppingBtn title="learn more" />
           </div>
         </div>
         <div className="white_space" ref={packageInfoRef} />

@@ -1,0 +1,156 @@
+@use "../common/colors";
+
+.root_carousel {
+  margin-top: 5rem;
+  overflow: hidden;
+  h1 {
+    text-align: center;
+    color: colors.$blueText;
+    font-weight: 500;
+    font-size: 3rem;
+  }
+}
+
+.carousel_container {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  width: 200%;
+  position: absolute;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  overflow: hidden;
+
+  animation: loop 100s linear infinite;
+  .carousel_container1 {
+    display: flex;
+    color: #000;
+    padding: 1rem;
+    width: 50%;
+
+    div {
+      padding: 1px 20px;
+    }
+
+    .icon__style_netflix {
+      &:hover {
+        color: #e50914;
+      }
+    }
+    .icon__style_nike {
+      &:hover {
+        color: #ccc;
+      }
+    }
+
+    .icon__style_starbuck {
+      &:hover {
+        color: #00704a;
+      }
+    }
+    .icon__style_spotify {
+      &:hover {
+        color: #1db954;
+      }
+    }
+    .icon__style_steam {
+      &:hover {
+        color: #2a475e;
+      }
+    }
+    .icon__style_beats {
+      &:hover {
+        color: #c41434;
+      }
+    }
+    .icon__style_bb {
+      &:hover {
+        color: #a0cd4a;
+      }
+    }
+    .icon__style_asus {
+      &:hover {
+        color: #00539b;
+      }
+    }
+    .icon__style_atnt {
+      &:hover {
+        color: #00a8e0;
+      }
+    }
+
+    .icon__style_3m {
+      &:hover {
+        color: #ffff88;
+      }
+    }
+    .icon__style_adobe {
+      &:hover {
+        color: #db76fa;
+      }
+    }
+    .icon__style_apple {
+      &:hover {
+        color: #ccc;
+      }
+    }
+    .icon__style_tesla {
+      &:hover {
+        color: #e82127;
+      }
+    }
+    .icon__style_uber {
+      &:hover {
+        color: #000;
+      }
+    }
+    .icon__style_rakuten {
+      &:hover {
+        color: #665cac;
+      }
+    }
+    .icon__style_samsung {
+      &:hover {
+        color: #034ea2;
+      }
+    }
+    .icon__style_ps {
+      &:hover {
+        color: #006fcd;
+      }
+    }
+    .icon__style_epic {
+      &:hover {
+        color: #e82127;
+      }
+    }
+    .icon__style_walmart {
+      &:hover {
+        color: #0071ce;
+      }
+    }
+    .icon__style_cisco {
+      &:hover {
+        color: #049fd9;
+      }
+    }
+    .icon__style_ebay {
+      &:hover {
+        color: #86b817;
+      }
+    }
+  }
+}
+
+@keyframes loop {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}

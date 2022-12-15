@@ -1,11 +1,9 @@
-import Navbar from "./components/navbar/Navbar";
-import VideoComp from "./components/videoSection/VideoComp";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <VideoComp />
+      <HomePage />
     </>
   );
 }
