@@ -1,0 +1,110 @@
+@mixin screenDisplay($JC) {
+  display: flex;
+  justify-content: $JC;
+  align-items: center;
+}
+
+.footer_container {
+  @include screenDisplay(center);
+  flex-direction: column;
+  color: black;
+  margin-bottom: 2rem;
+
+  .footer_mainlinks_contents {
+    @include screenDisplay(space-between);
+    width: 60vw;
+
+    div {
+      @include screenDisplay(flex-start);
+      width: 40%;
+
+      h3 {
+        text-transform: capitalize;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin-right: 1rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    border-bottom: 1px solid #000;
+  }
+
+  .footer_otherlinks_contents {
+    @include screenDisplay(space-between);
+    width: 60vw;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    div {
+      @include screenDisplay(flex-start);
+      width: 40%;
+
+      p {
+        cursor: pointer;
+        text-transform: capitalize;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #a0a6a7;
+        margin-right: 1rem;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  @mixin links() {
+    display: inline-flex;
+    font: inherit;
+    color: dodgerblue;
+    margin-left: 4px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .footer_info {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    padding: 10px;
+    p {
+      justify-content: flex-start;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #a0a6a7;
+
+      h6 {
+        @include links();
+      }
+    }
+
+    span {
+      font-size: 1rem;
+      color: #a0a6a7;
+      font-weight: 700;
+      word-spacing: 1px;
+
+      h6 {
+        @include links();
+      }
+    }
+  }
+}
