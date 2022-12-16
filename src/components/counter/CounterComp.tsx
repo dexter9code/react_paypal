@@ -1,5 +1,6 @@
 import { addTimer } from "../../features/TimerSlice";
 import { RootState } from "../../store/store";
+import SpaceBtn from "../other/SpaceBtn";
 import Tab from "../other/Tab";
 import CommonBtn from "./../other/CommonBtn";
 import "./counterComp.scss";
@@ -34,7 +35,7 @@ const CounterComp = () => {
             receiving payments securely every day.
           </h1>
         </div>
-        <CommonBtn btnType="login" title="Sign up now" />
+        <SpaceBtn title={`sign up now`} />
         <div className="timer">
           {timer?.map((item, index) => {
             return (

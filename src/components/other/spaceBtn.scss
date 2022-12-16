@@ -1,0 +1,23 @@
+@use "../common/colors";
+
+.space_container {
+  width: 300px;
+  border: 1px solid #f7f7f7;
+  padding: 1rem 5px;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: #fff;
+  transition: all 0.5s;
+  &:hover {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(216, 233, 238);
+  }
+
+  h1 {
+    text-align: center;
+    color: colors.$blueText;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}

@@ -24,7 +24,7 @@ const Footer = () => {
             return <p key={item.id}>{item.title}</p>;
           })}
         </div>
-        <div>
+        <div className="other_links_actions">
           {OTHER_LINKS2.map((item) => {
             return <p key={item.id}>{item.title}</p>;
           })}
