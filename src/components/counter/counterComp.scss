@@ -1,0 +1,79 @@
+@use "../common/colors";
+
+.root_counter {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+
+  .counter_info_counter {
+    margin-top: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+
+    display: flex;
+    flex-direction: column;
+    width: 55vw;
+    padding: 1rem;
+    color: #2c333b;
+
+    h4 {
+      font-size: 1.4rem;
+      padding: 12px 0;
+    }
+    p {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+  }
+}
+
+.counter_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: colors.$primaryColor;
+  padding: 5rem 0;
+
+  .counter_title {
+    max-width: 78rem;
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    margin-bottom: 5rem;
+  }
+
+  .timer {
+    display: flex;
+    margin-top: 5rem;
+
+    .single_number {
+      padding: 2.1rem 2.4rem;
+      border: 0.5px solid #f7f7f7;
+      border-radius: 60px;
+      background-color: #fff;
+      margin-right: 4px;
+      max-width: 100px;
+      max-height: 100px;
+      width: 90px;
+      height: 90px;
+      position: relative;
+
+      h3 {
+        vertical-align: middle;
+        transition-timing-function: ease-in;
+        transition: all 0.5s;
+        color: #000;
+        text-align: center;
+        font-size: 2.5rem;
+        position: absolute;
+        bottom: 1.2rem;
+        right: 2rem;
+      }
+    }
+  }
+}
