@@ -138,7 +138,7 @@ const VideoComp = () => {
             </p>
             <ShoppingBtn title="Link your card" />
           </div>
-          <img src="/pay-v2.png" alt="shopping-img" />
+          <img src="/pay-v2.gif" alt="shopping-img" />
         </div>
         <div className="white_space" ref={payInfoRef} />
 
