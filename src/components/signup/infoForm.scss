@@ -1,0 +1,56 @@
+@mixin screenType($AI) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: $AI;
+}
+
+.infoform_contianer {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  padding: 1rem 0;
+  transition: all 1s;
+
+  h4 {
+    font-size: 1.3rem;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+
+  .info_actions {
+    @include screenType(center);
+    // background-color: lightcoral;
+    width: 800px;
+    padding: 8px 5px;
+
+    text-transform: capitalize;
+
+    label {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-left: 1rem;
+      display: flex;
+      justify-content: flex-start;
+      width: 60%;
+      padding: 5px 0;
+    }
+
+    input {
+      width: 60%;
+      margin-left: 1rem;
+      height: 3rem;
+      outline: none;
+      border: 1px solid white;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      padding: 0 10px;
+      border-radius: 8px;
+
+      &:focus {
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}
