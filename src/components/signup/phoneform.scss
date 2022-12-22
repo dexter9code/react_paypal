@@ -31,15 +31,26 @@
     align-items: center;
     margin-top: 1rem;
     position: relative;
-    border: 1px solid black;
-    background-color: lightsalmon;
     border-radius: 8px;
     height: 4.5rem;
+    color: black;
 
     .mobile_label {
       position: absolute;
-      transition: all 0.5s;
+      transition: all 1s;
+      left: 1.3rem;
+      font-size: 1.2rem;
+    }
+
+    .mobile_label_hide {
+      position: absolute;
+      top: 0;
       left: 1rem;
+      font-size: 15px;
+      padding: 5px;
+      margin-bottom: 2px;
+      transition: all 0.8s;
+      font-size: 0.8rem;
     }
 
     .mobile_input {
@@ -50,19 +61,13 @@
       font-size: 1.1rem;
       padding-left: 1rem;
       padding-top: 1rem;
-    }
-    .mobile_input:focus {
-      background-color: #ccc;
+      background-color: #fff;
+      color: black;
+      border-radius: 5px;
     }
 
-    .mobile_label_hide {
-      position: absolute;
-      top: 0;
-      left: 0.5rem;
-      font-size: 15px;
-      padding: 5px;
-      margin-bottom: 2px;
-      transition: all 0.8s;
+    .mobile_input_error {
+      background-color: rgb(245, 135, 135);
     }
   }
 }

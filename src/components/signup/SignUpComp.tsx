@@ -4,12 +4,34 @@ import "./signupComp.scss";
 import { useMultiform } from "../../hooks/useMultiform";
 import { BsChevronLeft } from "react-icons/bs";
 import colorPaypalLogo from "../../assets/paypal_color_logo.svg";
+import { FormEvent, useState } from "react";
+
+type AllFormData = {
+  phoneNumber: string;
+  username: string;
+  password: string;
+  confirmPassword: string;
+};
+
+const INITIAL_DATA: AllFormData = {
+  confirmPassword: "",
+  password: "",
+  phoneNumber: "",
+  username: "",
+};
 
 const SingupComp = () => {
   const { backPage, step, nextPage, isFirstPage, isLastPage } = useMultiform([
     <PhoneForm />,
     <InfoForm />,
   ]);
+
+  const onSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    nextPage();
+  };
+
+  const [data, setData] = useState(INITIAL_DATA);
   return (
     <div className="signup__container">
       <div className="singup__actions_wrapper">
@@ -17,7 +39,7 @@ const SingupComp = () => {
           <img src={colorPaypalLogo} alt="paypal-logo" />
         </div>
         <h1>Sign up for PayPal</h1>
-        <form>
+        <form onSubmit={onSubmitHandler}>
           <div>{step}</div>
           {isFirstPage && (
             <BsChevronLeft
@@ -27,11 +49,7 @@ const SingupComp = () => {
               color={"#78c7e9"}
             />
           )}
-          <button
-            type="button"
-            className="signup__btn"
-            onClick={() => nextPage()}
-          >
+          <button type="submit" className="signup__btn">
             {isLastPage ? `Submit` : `Next`}
           </button>
         </form>
