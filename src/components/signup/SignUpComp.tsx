@@ -6,20 +6,6 @@ import { BsChevronLeft } from "react-icons/bs";
 import colorPaypalLogo from "../../assets/paypal_color_logo.svg";
 import { FormEvent, useState } from "react";
 
-type AllFormData = {
-  phoneNumber: string;
-  username: string;
-  password: string;
-  confirmPassword: string;
-};
-
-const INITIAL_DATA: AllFormData = {
-  confirmPassword: "",
-  password: "",
-  phoneNumber: "",
-  username: "",
-};
-
 const SingupComp = () => {
   const { backPage, step, nextPage, isFirstPage, isLastPage } = useMultiform([
     <PhoneForm />,
@@ -31,7 +17,6 @@ const SingupComp = () => {
     nextPage();
   };
 
-  const [data, setData] = useState(INITIAL_DATA);
   return (
     <div className="signup__container">
       <div className="singup__actions_wrapper">

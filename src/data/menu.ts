@@ -51,3 +51,26 @@ export const INFO = [
     description: `Report about the phishing attacks`,
   },
 ];
+
+export const SUMMARY_MENU = [
+  {
+    id: 272,
+    title: `dashboard`,
+  },
+  {
+    id: 273,
+    title: `send and request`,
+  },
+  {
+    id: 275,
+    title: `manage`,
+  },
+  {
+    id: 276,
+    title: `activity`,
+  },
+  {
+    id: 278,
+    title: `help`,
+  },
+];
