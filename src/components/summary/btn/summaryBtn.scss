@@ -1,0 +1,24 @@
+.summary_btn_container {
+  width: 250px;
+  height: 50px;
+  background-color: #ffc43a;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #f8ce6c;
+  }
+
+  .txt {
+    text-transform: capitalize;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+}

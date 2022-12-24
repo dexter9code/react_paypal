@@ -1,0 +1,140 @@
+@use "../common/colors";
+
+@mixin screen($directions) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $directions;
+}
+
+@mixin miniScreen($js) {
+  display: flex;
+  justify-content: $js;
+  align-items: center;
+}
+
+@mixin letterStyle() {
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 12px;
+  &:hover {
+    background-color: rgb(245, 231, 208);
+  }
+}
+
+@mixin iconStyle() {
+  .dot_icon {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    @include miniScreen(center);
+  }
+
+  .dot_icon_active {
+    background-color: #e3e6f1;
+    transition: all 0.5s;
+  }
+}
+
+.summary__container {
+  @include screen(row);
+  margin-top: 10rem;
+  color: black;
+
+  .summary_actions {
+    @include screen(column);
+    width: 700px;
+    padding: 1rem;
+
+    .summary_tab {
+      width: 100%;
+      height: 5rem;
+    }
+
+    .buttons {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    .payments_text_container {
+      @include miniScreen(space-between);
+      width: 90%;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      position: relative;
+
+      @include iconStyle();
+
+      .flot_one {
+        position: absolute;
+        bottom: -7rem;
+        right: 1rem;
+        background-color: #fff;
+        width: 230px;
+        height: 100px;
+
+        .float_one_actions {
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: column;
+          cursor: pointer;
+
+          p {
+            @include letterStyle();
+          }
+        }
+      }
+    }
+
+    .payments_bank_container {
+      @include miniScreen(space-between);
+      position: relative;
+      width: 88%;
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      @include iconStyle();
+
+      .flot_two {
+        position: absolute;
+        bottom: -6rem;
+        right: 1rem;
+        cursor: pointer;
+
+        .float_two_actions {
+          p {
+            @include letterStyle();
+          }
+        }
+      }
+    }
+
+    .summary_payments {
+      display: flex;
+      flex-direction: row;
+      width: 90%;
+      gap: 0.5rem;
+    }
+
+    .summary_cards_container {
+      width: 90%;
+    }
+
+    .summary__title {
+      margin-top: 1rem;
+      width: 88%;
+      text-align: start;
+      color: colors.$primaryColor;
+      cursor: pointer;
+
+      h1 {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
