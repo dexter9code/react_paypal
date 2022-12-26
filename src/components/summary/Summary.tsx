@@ -3,8 +3,12 @@ import SummaryBtn from "./btn/SummaryBtn";
 import { RECENT_USER, USERS_CARDS } from "./../../data/user";
 import RecentPayment from "./RecentPayment";
 import { RxDotsVertical } from "react-icons/rx";
+import { AiOutlineDoubleRight } from "react-icons/ai";
 import { useState, useMemo } from "react";
 import SummaryCard from "./SummaryCard";
+import PaymentsInfo from "./PaymentsInfo";
+import { PAYMENTS_DATA } from "./../../data/payments";
+import SummaryWallet from "./SummaryWallet";
 
 const Summary = () => {
   const [floatShow, setFloatShow] = useState(false);
@@ -14,10 +18,33 @@ const Summary = () => {
     return RECENT_USER.slice(0, 5);
   }, []);
 
+  const moneyTransfers = useMemo(() => {
+    return PAYMENTS_DATA.slice(0, 3);
+  }, []);
+
   return (
     <main className="summary__container">
       <section className="summary_activity">
-        <h1>recent activity</h1>
+        <h1 className="summary_greet_title">Good Morning, John</h1>
+        <SummaryWallet />
+        <div className="summary_activity_actions">
+          <div className="summary_activity_actions__text">
+            <h1>Recent activity</h1>
+            <AiOutlineDoubleRight size={20} className="icon_activity" />
+          </div>
+          {moneyTransfers.map((payment) => {
+            return (
+              <PaymentsInfo
+                key={payment.id}
+                amount={payment.amount}
+                date={payment.date}
+                payment_method={payment.payment_type}
+                payment_to={payment.paymentTo}
+                payment_send_to={payment.payment_to}
+              />
+            );
+          })}
+        </div>
       </section>
       <section className="summary_actions">
         <div className="buttons">
@@ -46,6 +73,7 @@ const Summary = () => {
             <RecentPayment id={user.id} name={user.name} key={user.id} />
           ))}
         </div>
+
         <div className="summary_tab"></div>
         <div className="payments_bank_container">
           <h1>Banks and Cards</h1>

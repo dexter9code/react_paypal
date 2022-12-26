@@ -1,0 +1,47 @@
+@use "../common/colors";
+
+.pay_activity_container {
+  .pay__actions {
+    display: flex;
+    align-items: center;
+    margin: 0.8rem 0;
+
+    .pay__img_container {
+      width: 60px;
+      height: 60px;
+      background-color: rgb(141, 141, 141);
+      border-radius: 35px;
+      margin: 1px 1.5rem;
+      @include colors.ScreenFlex();
+    }
+
+    .pay_rest_container {
+      display: flex;
+      justify-content: space-between;
+      width: 440px;
+      align-items: center;
+      border-bottom: 0.5px solid #ccc;
+
+      p {
+        font-weight: 700;
+      }
+
+      .pay_text_container {
+        margin: 0.7rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        h3 {
+          font-weight: bold;
+          color: black;
+          font-size: 1.2rem;
+        }
+        p {
+          font-weight: 400;
+          color: colors.$textGray;
+        }
+      }
+    }
+  }
+}
